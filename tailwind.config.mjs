@@ -4,18 +4,5 @@ export default {
 	theme: {
 		extend: {},
 	},
-	plugins: [require('@tailwindcss/typography'), require('daisyui')],
-	daisyui: {
-		themes: [
-			"dark", "cupcake"
-		],
-		darkTheme: 'dark',
-		lightTheme: 'cupcake',
-		base: true,
-		styled: true,
-		utils: true,
-		prefix: "",
-		logs: true,
-		themeRoot: ":root"
-	}
+	plugins: [require('@tailwindcss/typography')],
 }
