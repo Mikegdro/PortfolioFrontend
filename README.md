@@ -15,3 +15,7 @@ The main technologies used in this web app are:
 ## Connectivity
 
 It'll connecto to my API backend, which has a PostgreSQL connection with tables and information about my professional carreer.
+
+## Design
+
+I've used an AI, named GalileaoAI
