@@ -1,0 +1,26 @@
+---
+
+import { type Project } from '../../types';
+
+import ProjectCard from '../UI/ProjectCard.astro';
+import ProjectImageCard from '../UI/ProjectImageCard.astro';
+
+const response = await fetch(`${import.meta.env.PUBLIC_API}/api/projects`);
+const data: Array<Project> = await response.json();
+
+
+---
+
+<main>
+    <h2 class="text-3xl">Projects</h2>
+    <div class="pt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        { data.map((item) => {
+            // Check for personal project and images to render diferent components
+            if (item.type === 'personal' && item.PersonalProject?.image && item.PersonalProject.imageReduced) {
+                return <ProjectImageCard project={item}/>
+            } else {
+                return <ProjectCard project={item}/>
+            }
+        })}
+    </div>
+</main>

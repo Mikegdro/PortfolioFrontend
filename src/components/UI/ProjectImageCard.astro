@@ -1,0 +1,30 @@
+---
+import type { Project } from '../../types'
+
+
+interface Props {
+    project: Project
+}
+
+const { project } = Astro.props;
+
+const projectDescription = project.PersonalProject ? project.PersonalProject.title: project.PrivateProject?.title;
+
+const projectImage = project.PersonalProject ? project.PersonalProject.image : "";
+
+---
+
+<div class="card bg-base-100 image-full w-full shadow-xl">
+    <figure>
+      <img
+        src={projectImage}
+        alt="Project image" />
+    </figure>
+    <div class="card-body">
+      <h2 class="card-title">{project.name}</h2>
+      <p>{projectDescription}</p>
+      <div class="card-actions justify-end">
+        <button class="btn btn-primary">See more</button>
+      </div>
+    </div>
+</div>
