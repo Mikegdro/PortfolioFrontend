@@ -1,0 +1,30 @@
+---
+import Linkedin from "../icons/Linkedin.astro";
+import Github from "../icons/Github.astro";
+---
+
+<footer class="footer footer-center bg-base-200 text-base-content rounded p-10">
+    <nav>
+        <div class="grid grid-flow-col gap-4">
+            <a class="button" href="https://www.linkedin.com/in/mgdro/" target="_blank">
+                <Linkedin />
+            </a>
+            <a class="button" href="https://github.com/mikegdro" target="_blank">
+                <Github />
+            </a>
+        </div>
+    </nav>
+    <aside>
+        <p>
+            This site was created by <i class="bold"
+                >Miguel García del Real Ortiz</i
+            > using Astro 🚀 & Tailwind 🎈
+        </p>
+    </aside>
+</footer>
+
+<style>
+    .button {
+        @apply btn;
+    }
+</style>

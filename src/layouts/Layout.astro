@@ -16,13 +16,25 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-slate-800">
+	<body>
 		<slot />
 	</body>
 </html>
 
-<style>
+<style is:global>
 	body {
 		min-height: 100vh;
+	}
+
+	@font-face {
+		font-family: 'Monoton-Regular';
+		src: url('/fonts/Monoton-Regular.ttf');
+		font-weight: normal;
+		font-style: normal;
+		font-display: normal;
+	}
+
+	.monoton {
+		font-family: 'Monoton-Regular', sans-serif;
 	}
 </style>
