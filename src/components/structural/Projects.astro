@@ -13,7 +13,7 @@ const data: Array<Project> = await response.json();
 
 <main>
     <h2 class="text-3xl">Projects</h2>
-    <div class="pt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div class="pt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
         { data.map((item) => {
             // Check for personal project and images to render diferent components
             if (item.type === 'personal' && item.PersonalProject?.image && item.PersonalProject.imageReduced) {
