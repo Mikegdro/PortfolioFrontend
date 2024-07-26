@@ -1,24 +1,23 @@
 ---
-import type { Project } from '../../types'
-
+import type { Project } from "../../types";
 
 interface Props {
-    project: Project
+  project: Project;
 }
 
 const { project } = Astro.props;
 
-const projectDescription = project.PersonalProject ? project.PersonalProject.title: project.PrivateProject?.title;
-
+const projectDescription = project.PersonalProject
+  ? project.PersonalProject.title
+  : project.PrivateProject?.title;
 ---
 
-<div class="card bg-primary text-primary-content w-full">
-    <div class="card-body">
-      <h2 class="card-title">{project.name}</h2>
-      <p>{projectDescription}</p>
-      <div class="card-actions justify-end">
-        <button class="btn">See more</button>
-      </div>
+<div class="card w-full hover personal-card">
+  <div class="card-body">
+    <h2 class="card-title">{project.name}</h2>
+    <p>{projectDescription}</p>
+    <div class="card-actions justify-end">
+      <button class="button">See more</button>
     </div>
+  </div>
 </div>
-

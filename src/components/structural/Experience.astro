@@ -1,4 +1,29 @@
-<main>
-    <h2 class="text-3xl">Experience</h2>
-    <p>Experience here</p>
-</main>
+---
+
+import { type Experience } from "../../types";
+import ExperienceCard from "../UI/ExperienceCard.astro";
+
+let data: Array<Experience> = []
+
+try {
+    const response = await fetch(`${import.meta.env.PUBLIC_API}/api/experiences`);
+    data = await response.json();
+} catch(e) {
+    console.log(e)
+}
+---
+
+<section>
+    <h2 class="text-3xl box">Experience</h2>
+    
+    <div class="pt-5 flex flex-col">
+        { data.map((item) => {
+            // Check for personal project and images to render diferent components
+            return <Fragment>
+                        <ExperienceCard data={item}/>
+                    </Fragment>
+                    
+        })}
+    </div>
+    
+</section>

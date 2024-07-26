@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+		font-family: 'Manrope';
+		src: url('/fonts/Manrope.ttf');
+		font-weight: bold;
+		font-style: normal;
+		font-display: normal;
+	}
+
+	@font-face {
+		font-family: 'Monoton-Regular';
+		src: url('/fonts/Monoton-Regular.ttf');
+		font-weight: normal;
+		font-style: normal;
+		font-display: normal;
+	}
+
+	html {
+		font-family: 'Manrope', system-ui, sans-serif;
+	}
+
+	body {
+		min-height: 100vh;
+	}
+
+	.monoton {
+		font-family: 'Monoton-Regular', sans-serif;
+	}
+
+	.hover {
+        @apply transform transition duration-500 hover:scale-95
+    }
+
+	.personal-card {
+		@apply bg-accent;
+	}
+
+	.button {
+		@apply btn btn-outline text-sm;
+	}
+}
