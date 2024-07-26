@@ -43,7 +43,7 @@ try {
     let items = document.querySelectorAll('a.tab');
 
     items.forEach(item => {
-        item.addEventListener('click', (ev) => {
+        item.addEventListener('click', () => {
 
             document.querySelector('a.tab-active')?.classList.remove('tab-active')
             item.classList.add('tab-active')
