@@ -5,6 +5,8 @@ import { type Project } from '../../types';
 import ProjectCard from '../UI/ProjectCard.astro';
 import ProjectImageCard from '../UI/ProjectImageCard.astro';
 
+import Columns from '../UI/Columns.astro';
+
 let data: Array<Project> = []
 
 try {
@@ -19,7 +21,7 @@ try {
 
 <main>
     <h2 class="text-3xl">Projects</h2>
-    <div class="mb-5 pt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+    <Columns>
         { data.map((item) => {
             // Check for personal project and images to render diferent components
             if (item.type === 'personal' && item.PersonalProject?.image && item.PersonalProject.imageReduced) {
@@ -28,5 +30,5 @@ try {
                 return <ProjectCard project={item}/>
             }
         })}
-    </div>
+    </Columns>
 </main>

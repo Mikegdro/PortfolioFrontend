@@ -1,14 +1,49 @@
 ---
-import MenuButton from "../UI/MenuButton.astro"
-import ThemeSwap from "../UI/ThemeSwap.astro"
-import Logo from "../UI/Logo.astro"
+import ThemeSwap from "../UI/ThemeSwap.astro";
+import Logo from "../UI/Logo.astro";
 ---
 
 <header
-    class="mx-auto lg:px-52 md:px-36 px-10 h-auto w-full border-b-2 border-x-white-500 flex justify-between"
+    x-data="{ scroll: false }"
+    @scroll.window="scroll = (window.pageYOffset > window.innerHeight-100) ? true : false"
+    :class="{ 'bg-primary-content': scroll, 'bg-transparent': !scroll }"
+    class="navbar m-auto fixed top-0 z-10 transition-all duration-500"
 >
-  <ThemeSwap />
-  <Logo />
-  <MenuButton />
-    
+    <div class="navbar-start">
+        <ThemeSwap />
+    </div>
+
+    <div class="navbar-center">
+        <Logo />
+    </div>
+
+    <div class="navbar-end">
+        <div class="dropdown dropdown-bottom dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h7"></path>
+                </svg>
+            </div>
+            <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            >
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+        </div>
+    </div>
 </header>
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+></script>

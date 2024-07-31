@@ -5,6 +5,8 @@ import ExperienceCard from "../UI/ExperienceCard.astro";
 
 let data: Array<Experience> = []
 
+
+
 try {
     const response = await fetch(`${import.meta.env.PUBLIC_API}/api/experiences`);
     data = await response.json();

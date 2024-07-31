@@ -1,13 +1,24 @@
+---
+import Github from "../../icons/Github.astro"
+import Linkedin from "../../icons/Linkedin.astro"
+---
+
 <section
-  class="hero min-h-96 m-auto mt-10 rounded-xl"
-  style="background-image: url(temporal.jpg);"
+  class="hero min-h-screen m-auto bg-fixed"
+  style="background-image: url(bg.jpg);"
 >
-  <div class="hero-overlay bg-opacity-60 rounded-xl"></div>
-  <div class="hero-content text-neutral-content text-center">
+  <div class="hero-overlay bg-opacity-60"></div>
+  <div class="hero-content min-w-screen text-neutral-content text-left absolute bottom-5 left-5">
     <div class="max-w-md">
-      <h1 class="mb-5 text-5xl font-bold">In Development</h1>
-      <p class="mb-5">Stay Tuned for More!</p>
-      <button class="btn btn-outline">Unavailable</button>
+      <h1 class="mb-5 text-5xl font-bold">Miguel García del Real Ortiz</h1>
+      <p class="mb-5">Full-stack Software Engineer in Spain</p>
+
+      <div class="flex gap-5 items-center">
+        <a class="btn btn-outline" href="bg.jpg" download>CV</a>
+        <Github link="https://github.com/Mikegdro"/>
+        <Linkedin link="https://linkedin.com/in/mgdro"/>
+      </div>
+      
     </div>
   </div>
 </section>

@@ -3,6 +3,8 @@ import type { Tecnologies } from '../../types'
 
 import X from '../../icons/X.astro'
 
+import Columns from './Columns.astro'
+
 interface Props {
     data: Tecnologies[]
 }
@@ -11,26 +13,19 @@ const { data } = Astro.props
 
 ---
 
-<article class="grid lg:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4 gap-4 p-5">
+<Columns>
     { data.map(item => {
         return <div class="card shadow-xl hover personal-card">
                     <div class="card-body">
+                        <a class="btn btn-ghost p-5 h-auto" href={item.site}>
+                            <img src={item.logo} class="w-full h-auto"/>
+                        </a>
                         <h2 class="card-title ">{item.name}</h2>
                         <p class="text-stone-400">{item.description?.slice(0, 150)}</p>
                         <div class="card-actions justify-end items-center">
-                            <a href={item.twitter} target="_blank">
-                                <X />
-                            </a>
-                            <a href={item.site} target="_blank">
-                                <button class="button">Check them out!</button>
-                            </a>
-                            
+                            <X link={item.twitter || ""} />
                         </div>
                     </div>
                 </div>
     })}
-</article>
-
-<script>
-    
-</script>
+</Columns>

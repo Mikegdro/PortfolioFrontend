@@ -9,18 +9,9 @@ export default {
 	],
 	daisyui: {
 		themes: [
-			"cupcake", 
-			"myTheme",
-			{
-				myTheme: {
-					"primary": "#953f5e",
-					"secondary": "#00A17A",
-					"accent": "#005F41",
-					"neutral": "#404040",
-					"base-100": "#303030",
-				}
-			}
+			"autumn",
+			"forest",
 		],
-		darkTheme: ['class', '[data-theme="myTheme"'],
+		darkTheme: ['class', '[data-theme="forest"'],
 	}
 }

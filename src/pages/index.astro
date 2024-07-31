@@ -10,41 +10,19 @@ import Tecnologies from "../components/structural/Tecnologies.astro";
 import Projects from "../components/structural/Projects.astro";
 
 import Footer from "../components/structural/Footer.astro";
-import Logo from "../components/UI/Logo.astro";
+
 ---
 
 <Layout title="Bienvenido a mi web">
-    <div class="drawer">
-		<!-- Toggle -->
-        <input id="my-drawer" type="checkbox" class="drawer-toggle" />
 
-		<!-- Web Page Content -->
-        <div class="drawer-content">
-            <Header />
-            <main class="lg:mx-52 md:mx-36 mx-10 flex flex-col gap-16">
-                <Landing />
-                <!-- <About /> -->
-                <Experience />
-                <Tecnologies />
-                <Projects />
-            </main>
-            <Footer />
-        </div>
-
-		<!-- Drawer Content -->
-        <div class="drawer-side">
-            <label
-                for="my-drawer"
-                aria-label="close sidebar"
-                class="drawer-overlay"></label>
-            <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
-                <!-- Sidebar content here -->
-				<div class="flex justify-center mb-5">
-					<Logo/>
-				</div>
-                <li><a class="text-xl flex justify-center items-center w-full text-center" href="/">Index</a></li>
-				<li><a class="text-xl flex justify-center items-center w-full text-center" href="/blog">Blog</a></li>
-            </ul>
-        </div>
-    </div>
+    <Header />
+    
+    <Landing />
+    
+    <main class="lg:mx-52 md:mx-36 mx-10 flex flex-col gap-16 my-16">
+        <Experience />
+        <Tecnologies />
+        <Projects />
+    </main>
+    <Footer />
 </Layout>
