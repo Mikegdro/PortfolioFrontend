@@ -28,4 +28,8 @@ const { data } = Astro.props
                     </div>
                 </div>
     })}
+
+    {data.map(data => {
+        return <p>{JSON.stringify(data)}</p>
+    })}
 </Columns>
