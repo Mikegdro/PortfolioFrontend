@@ -13,17 +13,17 @@ const projectImage = project.PersonalProject ? project.PersonalProject.image : "
 
 ---
 
-<div class="card bg-base-100 image-full w-full shadow-xl hover">
+<article class="card image-full w-full shadow-xl hover personal-card">
     <figure>
       <img
         src={projectImage}
         alt="Project image" />
     </figure>
     <div class="card-body">
-      <h2 class="card-title">{project.name}</h2>
+      <h1>{project.name}</h1>
       <p>{projectDescription}</p>
       <div class="card-actions justify-end">
         <button class="button">See more</button>
       </div>
     </div>
-</div>
+  </article>

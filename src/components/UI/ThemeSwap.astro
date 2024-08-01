@@ -1,6 +1,6 @@
 <label class="swap swap-rotate scale-75">
     <!-- this hidden checkbox controls the state -->
-    <input type="checkbox" class="theme-controller" value="autumn" />
+    <input type="checkbox" class="theme-controller" value="nord" />
 
     <!-- sun icon -->
     <svg
@@ -24,3 +24,37 @@
         ></path>
     </svg>
 </label>
+
+<script is:inline>
+
+    const theme = (() => {
+
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+            return localStorage.getItem('theme')
+        }
+
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark'
+        }
+
+        return 'light'
+
+    })();
+
+    const button = document.querySelector('.theme-controller')
+
+    if (theme === 'light') {
+        button.click()
+    }
+    
+    button.addEventListener('click', () => {
+        const theme = localStorage.getItem('theme')
+
+        if (theme === 'dark') {
+            localStorage.setItem('theme', 'light')
+        } else {
+            localStorage.setItem('theme', 'dark')
+        }
+    })
+
+</script>

@@ -36,7 +36,15 @@
     }
 
 	.personal-card {
-		@apply bg-base-300;
+		@apply bg-neutral-content;
+	}
+
+	.personal-card h1 {
+		@apply capitalize text-stone-700 text-xl;
+	}
+
+	.personal-card p {
+		@apply capitalize text-stone-500;
 	}
 
 	.button {
