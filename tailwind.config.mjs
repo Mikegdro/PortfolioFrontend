@@ -9,9 +9,9 @@ export default {
 	],
 	daisyui: {
 		themes: [
-			"forest",
-			"nord"
+			"nord",
+			"dark"
 		],
-		darkTheme: ['class', '[data-theme="forest"]'],
+		darkTheme: ['class', '[data-theme="dark"]'],
 	}
 }

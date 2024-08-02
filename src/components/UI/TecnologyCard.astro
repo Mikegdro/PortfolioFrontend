@@ -17,7 +17,7 @@ const { data } = Astro.props
     { data.map(item => {
         return <div class="card shadow-xl hover personal-card">
                     <div class="card-body">
-                        <a class="btn btn-ghost p-5 h-auto" href={item.site}>
+                        <a class="btn btn-outline-primary outline-dashed hover:bg-primary hover:outline-current min-h-36" href={item.site}>
                             <img src={item.logo} class="w-full h-auto"/>
                         </a>
                         <h1>{item.name}</h1>

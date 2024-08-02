@@ -48,6 +48,6 @@
 	}
 
 	.button {
-		@apply btn btn-outline text-sm;
+		@apply btn btn-outline text-sm text-stone-700 hover:bg-base-100;
 	}
 }

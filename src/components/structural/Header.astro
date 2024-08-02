@@ -9,15 +9,15 @@ import Logo from "../UI/Logo.astro";
     :class="{ 'bg-neutral': scroll, 'bg-transparent': !scroll }"
     class="navbar m-auto fixed top-0 z-10 transition-all duration-500"
 >
-    <div class="navbar-start bg-transparent" data-theme="forest">
+    <div class="navbar-start bg-transparent">
         <ThemeSwap />
     </div>
 
-    <div class="navbar-center bg-transparent" data-theme="forest">
+    <div class="navbar-center bg-transparent">
         <Logo />
     </div>
 
-    <div class="navbar-end bg-transparent" data-theme="forest">
+    <div class="navbar-end bg-transparent">
         <div class="dropdown dropdown-bottom dropdown-end">
             <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
                 <svg
@@ -36,7 +36,7 @@ import Logo from "../UI/Logo.astro";
             </div>
             <ul
                 tabindex="0"
-                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                class="menu bg-neutral menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
                 <li><a href="/">Home</a></li>
                 <li><a href="/blog">Blog</a></li>
