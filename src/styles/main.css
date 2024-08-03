@@ -43,8 +43,20 @@
 	}
 
 	.hover {
-        @apply transform transition duration-500 hover:scale-95
-    }
+		transition: all 500ms !important;
+		filter: blur(0) !important;
+
+		/* Para arreglar el blur generado por la animación de Scale */
+		backface-visibility: hidden;
+		/* Esto hace que se utilice aceleración por hardware en la anim mejorandola */
+		transform: translateZ();
+		/* Esto se suele añadir también para compatibilidades con navegadores */
+		-webkit-font-smoothing: subpixel-antialiased;
+	}
+
+	.hover:hover {
+		transform: scale(.97);
+	}
 
 	.personal-card {
 		@apply bg-neutral-content;
