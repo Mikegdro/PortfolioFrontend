@@ -15,9 +15,9 @@ const { data } = Astro.props
 
 <Columns>
     { data.map(item => {
-        return <div class="card shadow-xl hover personal-card">
+        return <div class="card shadow-xl hover personal-card scroll-animation right-animation child-animation">
                     <div class="card-body">
-                        <a class="btn btn-outline-primary outline-dashed hover:bg-primary hover:outline-current min-h-36" href={item.site}>
+                        <a class="btn btn-ghost dark:btn-outline outline-primary outline-dashed border-0 hover:bg-primary hover:outline-double min-h-36" href={item.site}>
                             <img src={item.logo} class="w-full h-auto"/>
                         </a>
                         <h1>{item.name}</h1>

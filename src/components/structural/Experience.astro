@@ -21,9 +21,9 @@ try {
     <div class="pt-5 flex flex-col">
         { data.map((item) => {
             // Check for personal project and images to render diferent components
-            return <Fragment>
+            return <div class="scroll-animation left-animation child-animation">
                         <ExperienceCard data={item}/>
-                    </Fragment>
+                    </div>
                     
         })}
     </div>

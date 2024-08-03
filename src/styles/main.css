@@ -14,13 +14,24 @@
 	@font-face {
 		font-family: 'Monoton-Regular';
 		src: url('/fonts/Monoton-Regular.ttf');
-		font-weight: normal;
 		font-style: normal;
 		font-display: normal;
 	}
 
+	@font-face {
+		font-family: 'Poppins';
+		src: url('/fonts/Poppins-Black.ttf');
+		font-weight: 800;
+	}
+
+	html, body {
+		max-width: 100%;
+		overflow-x: hidden;
+	}
+
 	html {
 		font-family: 'Manrope', system-ui, sans-serif;
+		
 	}
 
 	body {
@@ -48,6 +59,44 @@
 	}
 
 	.button {
-		@apply btn btn-outline text-sm text-stone-700 hover:bg-base-100;
+		@apply btn btn-outline text-sm text-stone-700 hover:bg-primary hover:text-primary-content;
+	}
+
+	.scroll-animation {
+		opacity: 0;
+		filter: blur(5px);
+		transition: all 1s;
+	}
+
+	.scroll-animation.left-animation:not(.show) {
+		transform: translateX(-100%);
+	}
+
+	.scroll-animation.right-animation:not(.show) {
+		transform: translateX(+100%);
+	}
+
+	.child-animation:nth-child(2) {
+		transition-delay: 200ms;
+	}
+
+	.child-animation:nth-child(3) {
+		transition-delay: 300ms;
+	}
+
+	.child-animation:nth-child(4) {
+		transition-delay: 400ms;
+	}
+
+	.show {
+		opacity: 1;
+		filter: blur(0);
+		transform: translateX(0);
+	}
+
+	@media(prefers-reduced-motion) {
+		.scroll-animation {
+			transition: none;
+		}
 	}
 }

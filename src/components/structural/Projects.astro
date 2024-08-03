@@ -19,16 +19,20 @@ try {
 
 ---
 
-<main>
+<section>
     <h2 class="text-3xl">Projects</h2>
     <Columns>
         { data.map((item) => {
             // Check for personal project and images to render diferent components
             if (item.type === 'personal' && item.PersonalProject?.image && item.PersonalProject.imageReduced) {
-                return <ProjectImageCard project={item}/>
+                return <div class="scroll-animation left-animation child-animation">
+                            <ProjectImageCard project={item}/>
+                        </div>
             } else {
-                return <ProjectCard project={item}/>
+                return <div class="scroll-animation left-animation child-animation">
+                            <ProjectCard project={item}/>
+                        </div>
             }
         })}
     </Columns>
-</main>
+</section>

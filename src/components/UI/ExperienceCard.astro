@@ -14,15 +14,21 @@ const startDate: Array<string> = getDayAndMonth(data.startDate!)
 const endDate: Array<string> = getDayAndMonth(data.endDate!)
 ---
 
-<article class="flex justify-between p-7 rounded-xl hover shadow-lg personal-card">
+<article class="flex justify-between flex-wrap gap-5 p-7 rounded-xl hover shadow-lg personal-card">
     <ExperienceModal data={data} />
     <div class="flex flex-col">
         <h1>{data.role}</h1>
         <p>{startDate[0]} {startDate[1]} - {endDate[0]} {endDate[1]}</p>
     </div>
-    <div>
-        <button class="button" onclick="Modal.showModal()">
-            See more
-        </button>
-    </div>
+    <button class="button" onclick="Modal.showModal()">
+        See more
+    </button>
 </article>
+
+<style is:inline>
+    @media screen and (width <= 550px) {
+        .button {
+            width: 100%;
+        }
+    }
+</style>
