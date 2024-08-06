@@ -2,7 +2,7 @@
 import type { Experience } from '../../types'
 
 import { getDayAndMonth } from '../../utils'
-import ExperienceModal from './ExperienceModal.astro'
+// import ExperienceModal from './ExperienceModal.astro'
 
 interface Props {
   data: Experience
@@ -15,14 +15,13 @@ const endDate: Array<string> = getDayAndMonth(data.endDate!)
 ---
 
 <article class="flex justify-between flex-wrap gap-5 p-7 rounded-xl hover shadow-lg personal-card">
-    <ExperienceModal data={data} />
     <div class="flex flex-col">
         <h1>{data.role}</h1>
         <p>{startDate[0]} {startDate[1]} - {endDate[0]} {endDate[1]}</p>
     </div>
-    <button class="button" onclick="Modal.showModal()">
+    <a class="button" href=`/experience/${data.id}`>
         See more
-    </button>
+    </a>
 </article>
 
 <style is:inline>

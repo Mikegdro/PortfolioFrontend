@@ -3,7 +3,6 @@
 import { type Project } from '../../types';
 
 import ProjectCard from '../UI/ProjectCard.astro';
-import ProjectImageCard from '../UI/ProjectImageCard.astro';
 
 import Columns from '../UI/Columns.astro';
 
@@ -12,7 +11,6 @@ let data: Array<Project> = []
 try {
     const response = await fetch(`${import.meta.env.PUBLIC_API}/api/projects`);
     data = await response.json();
-        
 } catch(e) {
     console.log(e)
 }
@@ -23,16 +21,10 @@ try {
     <h2 class="text-3xl">Projects</h2>
     <Columns>
         { data.map((item) => {
-            // Check for personal project and images to render diferent components
-            if (item.type === 'personal' && item.PersonalProject?.image && item.PersonalProject.imageReduced) {
-                return <div class="scroll-animation left-animation child-animation">
-                            <ProjectImageCard project={item}/>
-                        </div>
-            } else {
-                return <div class="scroll-animation left-animation child-animation">
-                            <ProjectCard project={item}/>
-                        </div>
-            }
+            return <div class="scroll-animation left-animation child-animation">
+                        <ProjectCard project={item}/>
+                    </div>
+            
         })}
     </Columns>
 </section>

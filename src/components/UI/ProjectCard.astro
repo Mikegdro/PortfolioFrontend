@@ -12,12 +12,12 @@ const projectDescription = project.PersonalProject
   : project.PrivateProject?.title;
 ---
 
-<div class="card w-full hover personal-card">
+<article class="card w-full hover personal-card">
   <div class="card-body">
     <h1>{project.name}</h1>
     <p>{projectDescription}</p>
     <div class="card-actions justify-end">
-      <button class="button">See more</button>
+      <a href=`/project/${project.id}` class="button">See more</a>
     </div>
   </div>
-</div>
+</article>

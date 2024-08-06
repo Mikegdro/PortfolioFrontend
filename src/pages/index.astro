@@ -1,4 +1,7 @@
 ---
+
+export const prerender = true
+
 import Layout from "../layouts/Layout.astro";
 
 import Header from "../components/structural/Header.astro";
@@ -7,7 +10,7 @@ import Landing from "../components/structural/Hero.astro";
 import About from "../components/structural/About.astro";
 
 import Experience from "../components/structural/Experience.astro";
-import Tecnologies from "../components/structural/Tecnologies.astro";
+import Tecnologies from "../components/structural/Tecnologies.vue"
 import Projects from "../components/structural/Projects.astro";
 
 import Footer from "../components/structural/Footer.astro";
@@ -17,33 +20,15 @@ import Footer from "../components/structural/Footer.astro";
 <Layout title="Bienvenido a mi web">
 
     <Header />
-    
+
     <Landing />
 
     <About />
-    
+
     <main class="lg:mx-52 md:mx-36 mx-5 flex flex-col gap-16 my-16">
         <Experience />
-        <Tecnologies />
+        <Tecnologies client:load />
         <Projects />
     </main>
     <Footer />
 </Layout>
-
-<script>
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show')
-            } else {
-                entry.target.classList.remove('show')
-            }
-        })
-    })
-
-    const entries = document.querySelectorAll('.scroll-animation')
-    entries.forEach(entry => observer.observe(entry));
-
-
-</script>
