@@ -81,11 +81,11 @@
 	}
 
 	.scroll-animation.left-animation:not(.show) {
-		transform: translateX(-100%);
+		transform: translateX(-99%);
 	}
 
 	.scroll-animation.right-animation:not(.show) {
-		transform: translateX(+100%);
+		transform: translateX(+99%);
 	}
 
 	.child-animation:nth-child(2) {
@@ -104,6 +104,10 @@
 		opacity: 1;
 		filter: blur(0);
 		transform: translateX(0);
+	}
+
+	.hidden {
+		display: none;
 	}
 
 	@media(prefers-reduced-motion) {

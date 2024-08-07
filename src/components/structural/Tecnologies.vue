@@ -8,6 +8,15 @@
 
     import { ref } from 'vue';
 
+    import { vIntersectionObserver } from '@vueuse/components'
+
+    const isVisible = ref(false)
+
+    function onIntersectionObserver([{ isIntersecting }]: IntersectionObserverEntry[]) {
+        isVisible.value = isIntersecting
+        console.log(isIntersecting)
+    }
+
     const loading = ref(false)
     const error = ref<string | null>(null)
     const tecnologies = ref<Tecnologies[]>([])
@@ -39,12 +48,12 @@
             </div>
         </div>
         <div v-if="error"></div>
-        <div v-if="tecnologies">
+        <div v-if="tecnologies" v-intersection-observer="onIntersectionObserver">
             <h1 class="text-3xl">Tecnologies</h1>
             <Columns>
-                <template v-for="tecnology in tecnologies" :key="tecnology.id">
+                <div v-for="tecnology in tecnologies" :key="tecnology.id" class="scroll-animation right-animation child-animation z-0" :class="{ show: isVisible }" >
                     <TecnologyCard v-bind="tecnology" />
-                </template>
+                </div>
             </Columns>
         </div>
     </section>

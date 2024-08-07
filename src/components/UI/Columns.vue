@@ -1,5 +1,5 @@
 <template>
-    <section class="pt-10 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 gap-16">
+    <section class="pt-10 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 gap-16 ">
         <slot />
     </section>
 </template>
