@@ -6,8 +6,8 @@ export const prerender = true
 ---
 
 <section
-  class="hero min-h-screen m-auto"
-  style="background-image: url(temporal.jpg); background-position: center center; background-size: cover; background-attachment: fixed;"
+  class="hero min-h-screen m-auto bg-fixed"
+  style="background-image: url(temporal.jpg);"
 >
   <div class="hero-overlay bg-stone-800 bg-opacity-60"></div>
   <div class="hero-content text-center bg-transparent">
@@ -41,6 +41,11 @@ export const prerender = true
     
   }
 
+  @media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .hero {
+      background-attachment: initial;
+    }
 
+  }
 
 </style>
