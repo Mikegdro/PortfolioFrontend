@@ -1,5 +1,7 @@
 ---
 
+import { Suspense } from "vue";
+
 import Layout from "../layouts/Layout.astro";
 
 import Header from "../components/structural/Header.astro";
@@ -8,10 +10,10 @@ import Landing from "../components/structural/Hero.astro";
 import About from "../components/structural/About.astro";
 
 import Experience from "../components/structural/Experience.astro";
-import Tecnologies from "../components/structural/Tecnologies.vue"
-import Projects from "../components/structural/Projects.astro";
 
-import Alert from "../components/UI/Alert.vue";
+import Tecnologies from "../components/structural/Tecnologies.vue"
+
+import Projects from "../components/structural/Projects.vue";
 
 import Footer from "../components/structural/Footer.astro";
 
@@ -28,8 +30,7 @@ import Footer from "../components/structural/Footer.astro";
     <main class="lg:mx-52 md:mx-36 mx-5 flex flex-col gap-16 my-16">
         <Experience />
         <Tecnologies client:load />
-        <Projects />
-        <!-- <Alert message="Astro has a new bug in view transitions, if you go back at any time the screen will blur." client:load /> -->
+        <Projects client:load />
     </main>
     <Footer />
 </Layout>
