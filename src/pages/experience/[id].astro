@@ -1,6 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro"
 
+import Header from "../../components/structural/Header.astro";
+
 import { type Experience } from "../../types";
 
 const { id } = Astro.params
@@ -20,6 +22,9 @@ try {
 ---
 
 <Layout title="Experience">
+
+    <Header />
     
+    <h1>Experience</h1>
 
 </Layout>

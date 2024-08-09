@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro"
 
+import Header from "../../components/structural/Header.astro"
 
 const { id } = Astro.params
 
@@ -8,5 +9,7 @@ console.log(id)
 ---
 
 <Layout title="Project">
+
+    <Header />
     
 </Layout>

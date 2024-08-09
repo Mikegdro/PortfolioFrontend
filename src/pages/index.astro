@@ -11,6 +11,8 @@ import Experience from "../components/structural/Experience.astro";
 import Tecnologies from "../components/structural/Tecnologies.vue"
 import Projects from "../components/structural/Projects.astro";
 
+import Alert from "../components/UI/Alert.vue";
+
 import Footer from "../components/structural/Footer.astro";
 
 ---
@@ -19,7 +21,7 @@ import Footer from "../components/structural/Footer.astro";
 
     <Header />
 
-    <Landing transition:name="landing" />
+    <Landing />
 
     <About />
 
@@ -27,6 +29,7 @@ import Footer from "../components/structural/Footer.astro";
         <Experience />
         <Tecnologies client:load />
         <Projects />
+        <!-- <Alert message="Astro has a new bug in view transitions, if you go back at any time the screen will blur." client:load /> -->
     </main>
     <Footer />
 </Layout>
