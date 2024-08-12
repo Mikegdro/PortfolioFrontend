@@ -4,43 +4,17 @@
 
 @layer base {
 
-    @font-face {
-		font-family: 'Manrope';
-		src: url('/fonts/Manrope.ttf');
-		font-weight: bold;
-		font-style: normal;
-		font-display: normal;
-	}
-
-	@font-face {
-		font-family: 'Monoton-Regular';
-		src: url('/fonts/Monoton-Regular.ttf');
-		font-style: normal;
-		font-display: normal;
-	}
-
-	@font-face {
-		font-family: 'Poppins';
-		src: url('/fonts/Poppins-Black.ttf');
-		font-weight: 800;
-	}
-
-	html, body {
+    html, body {
 		max-width: 100%;
 		overflow-x: hidden;
 	}
 
 	html {
 		font-family: 'Manrope', system-ui, sans-serif;
-		
 	}
 
 	body {
 		min-height: 100vh;
-	}
-
-	.monoton {
-		font-family: 'Monoton-Regular', sans-serif;
 	}
 
 	.hover {
@@ -90,15 +64,15 @@
 	}
 
 	.child-animation:nth-child(2) {
-		transition-delay: 200ms;
+		transition-delay: 100ms;
 	}
 
 	.child-animation:nth-child(3) {
-		transition-delay: 300ms;
+		transition-delay: 200ms;
 	}
 
 	.child-animation:nth-child(4) {
-		transition-delay: 400ms;
+		transition-delay: 300ms;
 	}
 
 	.show {

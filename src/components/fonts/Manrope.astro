@@ -1,0 +1,26 @@
+---
+
+import { AstroFont } from 'astro-font'
+
+---
+
+<AstroFont
+    config={[
+        {
+            name: "Manrope",
+            src: [
+                {
+                    style: 'normal',
+                    weight: 'bold',
+                    path: 'public/fonts/Manrope.ttf'
+                }
+            ],
+            preload: false,
+            display: "swap",
+            selector: ".manrope",
+            fallback: "sans-serif"
+        }
+    ]}
+>
+
+</AstroFont>

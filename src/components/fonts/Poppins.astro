@@ -1,0 +1,26 @@
+---
+
+import { AstroFont } from 'astro-font'
+
+---
+
+<AstroFont
+    config={[
+        {
+            name: "Poppins",
+            src: [
+                {
+                    style: 'normal',
+                    weight: 800,
+                    path: 'public/fonts/Poppins-Black.ttf'
+                }
+            ],
+            preload: false,
+            display: "swap",
+            selector: ".poppins",
+            fallback: "sans-serif"
+        }
+    ]}
+>
+
+</AstroFont>

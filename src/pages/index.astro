@@ -4,10 +4,10 @@ import Layout from "../layouts/Layout.astro";
 
 import Header from "../components/structural/Header.astro";
 
-import Landing from "../components/structural/Hero.astro";
+import Landing from "../components/structural/Hero.vue";
 import About from "../components/structural/About.astro";
 
-import Experience from "../components/structural/Experience.astro";
+import Experience from "../components/structural/Experience.vue";
 
 import Tecnologies from "../components/structural/Tecnologies.vue"
 
@@ -21,12 +21,12 @@ import Footer from "../components/structural/Footer.astro";
 
     <Header />
 
-    <Landing />
+    <Landing client:load />
 
     <About />
 
     <main class="lg:mx-52 md:mx-36 mx-5 flex flex-col gap-16 my-16">
-        <Experience />
+        <Experience client:load />
         <Tecnologies client:load />
         <Projects client:load />
     </main>

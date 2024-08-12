@@ -1,0 +1,25 @@
+---
+
+import { AstroFont } from 'astro-font'
+
+---
+
+<AstroFont
+    config={[
+        {
+            name: "Monoton",
+            src: [
+                {
+                    style: 'normal',
+                    path: 'public/fonts/Monoton-Regular.ttf'
+                }
+            ],
+            preload: false,
+            display: "swap",
+            selector: ".monoton",
+            fallback: "sans-serif"
+        }
+    ]}
+>
+
+</AstroFont>

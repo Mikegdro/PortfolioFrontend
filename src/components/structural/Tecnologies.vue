@@ -17,13 +17,13 @@
     }
 
     const tecnologies = ref<Tecnologies[]>([])
-    const err = ref()
+    const err = ref(false)
     const loading = ref(true)
 
     async function loadData() {
         const { isFetching, error, data } = await useFetch(`${import.meta.env.PUBLIC_API}/api/tecnologies`).get().json()
 
-        err.value = error
+        err.value = error.value
         loading.value = isFetching.value
         tecnologies.value = data.value
     }
