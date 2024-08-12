@@ -46,7 +46,7 @@
 
 <template>
     <section class="hero min-h-screen m-auto bg-fixed" :style="bg" :class="{ loaded: loaded }" v-intersection-observer="onIntersectionObserver">
-        <img ref="imgRef" src="assets/full.webp" loading="lazy" class="h-screen object-cover fixed" alt="background image of a forest."/>
+        <img ref="imgRef" src="assets/full.webp" loading="lazy" class="h-screen w-dvw object-cover fixed" alt="background image of a forest."/>
         <div class="hero-overlay bg-stone-800 bg-opacity-60"></div>
         <div class="hero-content text-center">
             <div class="max-w-md">
