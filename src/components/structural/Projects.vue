@@ -9,14 +9,6 @@
     import ProjectCard from '../UI/ProjectCard.vue';
     import Columns from '../UI/Columns.vue';
 
-    import { vIntersectionObserver } from '@vueuse/components'
-
-    const isVisible = ref(false)
-
-    function onIntersectionObserver([{ isIntersecting }]: IntersectionObserverEntry[]) {
-        isVisible.value = isIntersecting
-    }
-
     const projects = ref<Project[]>([]);
     const err = ref();
     const loading = ref<boolean>(true);
@@ -36,10 +28,10 @@
     <section>
         <h2 class="text-3xl">Projects</h2>
         <div v-if="projects">
-            <Columns v-intersection-observer="onIntersectionObserver">
-                <div v-for="project in projects" :key="project.id" class="scroll-animation left-animation child-animation" :class="{ show: isVisible }" >
-                    <ProjectCard v-bind="project" />
-                </div>
+            <Columns direction="left">
+                <template v-for="(project, index) in projects" :key="project.id" >
+                    <ProjectCard v-bind="project" :data-index="index" />
+                </template>
             </Columns>
         </div>
         <div v-if="loading">

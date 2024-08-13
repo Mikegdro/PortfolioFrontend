@@ -11,6 +11,7 @@
 
 	html {
 		font-family: 'Manrope', system-ui, sans-serif;
+		scroll-behavior: smooth;
 	}
 
 	body {
@@ -30,7 +31,11 @@
 	}
 
 	.hover:hover {
-		transform: scale(.97);
+		transform: scale(.97) !important;
+	}
+
+	.tab-active {
+		transition: background-color 1s;
 	}
 
 	.personal-card {

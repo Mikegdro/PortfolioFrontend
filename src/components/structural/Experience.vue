@@ -3,18 +3,13 @@
 
     import { ref } from 'vue';
 
-    import { vIntersectionObserver } from '@vueuse/components'
     import { useFetch } from '@vueuse/core';
 
     import type { Experience } from '../../types';
 
     import ExperienceCard from '../UI/ExperienceCard.vue'
 
-    const isVisible = ref(false)
-
-    function onIntersectionObserver([{ isIntersecting }]: IntersectionObserverEntry[]) {
-        isVisible.value = isIntersecting
-    }
+    import GroupScrollAnimation from '../transitions/GroupScrollAnimation.vue';
 
     const experiences = ref<Experience[]>([])
     const err = ref(false)
@@ -37,9 +32,11 @@
     <section>
         <h2 class="text-3xl box">Experience</h2>
         
-        <div class="pt-5 flex flex-col" v-intersection-observer="onIntersectionObserver">
-            <div v-if="experiences.length > 0" class="scroll-animation left-animation child-animation" :class="{ show: isVisible }">
-                <ExperienceCard v-for="experience in experiences" v-bind="experience"/>
+        <div class="pt-5 flex flex-col">
+            <div v-if="experiences.length > 0">
+                <GroupScrollAnimation className="" direction="left">
+                    <ExperienceCard v-for="experience in experiences" v-bind="experience"/>
+                </GroupScrollAnimation>
             </div>
         </div>
         

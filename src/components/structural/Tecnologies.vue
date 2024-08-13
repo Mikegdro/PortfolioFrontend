@@ -2,19 +2,12 @@
 
     import { ref } from 'vue';
 
-    import { vIntersectionObserver } from '@vueuse/components'
     import { useFetch } from '@vueuse/core';
 
     import type { Tecnologies } from '../../types';
 
     import Columns from '../UI/Columns.vue';
     import TecnologyCard from '../UI/TecnologyCard.vue';
-
-    const isVisible = ref(false)
-
-    function onIntersectionObserver([{ isIntersecting }]: IntersectionObserverEntry[]) {
-        isVisible.value = isIntersecting
-    }
 
     const tecnologies = ref<Tecnologies[]>([])
     const err = ref(false)
@@ -30,17 +23,37 @@
 
     loadData()
 
+    const activeTab = ref<"frontend" | "backend" | "devops">("frontend");
+
+    function changeTab ( ev: MouseEvent ) {
+        const target = ev.target as HTMLElement
+        const id = target.getAttribute('id')
+
+        if (id != null && id === 'frontend' || id === 'backend' || id === 'devops') {
+            activeTab.value = id
+        }
+    }
+
 </script>
 
 <template>
     <section>
         <h1 class="text-3xl">Tecnologies</h1>
-        <div v-if="tecnologies" v-intersection-observer="onIntersectionObserver">
-            <Columns>
-                <div v-for="tecnology in tecnologies" :key="tecnology.id" class="scroll-animation right-animation child-animation z-0" :class="{ show: isVisible }" >
-                    <TecnologyCard v-bind="tecnology" />
-                </div>
-            </Columns>
+        <div v-if="tecnologies">
+            <div role="tablist" class="tabs tabs-boxed mt-5">
+                <a id="frontend" role="tab" class="tab" :class="{ 'tab-active': activeTab === 'frontend' }" @click="changeTab">Front-end</a>
+                <a id="backend" role="tab" class="tab" :class="{ 'tab-active': activeTab === 'backend' }" @click="changeTab">Back-end</a>
+                <a id="devops" role="tab" class="tab" :class="{ 'tab-active': activeTab === 'devops' }" @click="changeTab">Devops</a>
+            </div>
+
+            <div class="content">
+                <Columns direction="right" >
+                    <template v-for="(tecnology, index) in tecnologies" :key="tecnology.id" >
+                        <TecnologyCard v-if="tecnology.type === activeTab" v-bind="tecnology" :data-index="index" />
+                    </template>
+                </Columns>
+            </div>
+            
         </div>
         <div v-if="loading">
             <div class="loading"></div>
