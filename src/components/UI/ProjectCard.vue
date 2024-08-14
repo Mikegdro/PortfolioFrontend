@@ -1,5 +1,9 @@
 <script setup lang="ts">
 
+    import { onMounted, ref } from 'vue'
+
+    import { useScrollAnimation } from '../../composables/ScrollAnimation.ts'
+
     import { type  Project } from '../../types';
 
     const project = defineProps<Project>()
@@ -13,10 +17,21 @@
     const logo = project.PrivateProject != null && project.PrivateProject?.Company.logo != undefined ? project.PrivateProject.Company.logo : null
     const linkedin = project.PrivateProject != null && project.PrivateProject.Company.linkedin != undefined ? project.PrivateProject.Company.linkedin : null
 
+    const article = ref<HTMLElement | null>(null)
+
+    onMounted(() => {
+
+        const element: HTMLElement | null = article.value
+
+        if (element === null ) return
+
+        useScrollAnimation(element)
+    })
+
 </script>
 
 <template>
-    <article ref="" class="card w-full hover personal-card">
+    <article ref="article" class="card w-full hover personal-card">
         <div class="card-body">
             <a v-if="logo && linkedin" :href="linkedin" class="btn btn-primary fixed logo">
                 <img :src="logo" alt="Company Logo" width="50"/>

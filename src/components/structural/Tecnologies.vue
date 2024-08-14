@@ -46,12 +46,10 @@
                 <a id="devops" role="tab" class="tab" :class="{ 'tab-active': activeTab === 'devops' }" @click="changeTab">Devops</a>
             </div>
 
-            <div v-if="tecnologies" class="content bg-base-100 rounded-lg py-10">
-                <Columns direction="right" >
-                    <template v-for="(tecnology, index) in tecnologies" :key="tecnology.id" >
-                        <TecnologyCard v-if="tecnology.type === activeTab" v-bind="tecnology" :data-index="index" />
-                    </template>
-                </Columns>
+            <div v-if="tecnologies" class="content bg-base-100 rounded-lg py-10 columns">
+                <template v-for="(tecnology, index) in tecnologies" :key="tecnology.id" >
+                    <TecnologyCard v-if="tecnology.type === activeTab" v-bind="tecnology" :data-index="index" />
+                </template>
             </div>
             
         </div>

@@ -27,13 +27,13 @@
 </script>
 
 <template>
-    <section class="lg:px-52 md:px-24 sm:px-14 px-5 bg-base-100 py-16">
+    <section class="lg:px-52 md:px-24 sm:px-14 px-5 bg-base-100 pb-16">
         <h2 class="text-3xl box text-center">Experience</h2>
         
-        <div class="content pt-10 flex flex-col">
-            <div v-if="experiences.length > 0">
-                <ExperienceCard v-for="experience in experiences" v-bind="experience"/>
-            </div>
+        <div v-if="experiences" class="content pt-10 flex flex-col">
+            <template v-for="(experience, index) in experiences" :key="experience.id">
+                <ExperienceCard v-bind="experience" :data-index="index"/>
+            </template>
         </div>
         
     </section>

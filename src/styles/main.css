@@ -54,6 +54,10 @@
 		@apply btn btn-outline text-sm text-stone-700 hover:bg-primary hover:text-primary-content;
 	}
 
+	.columns {
+		@apply grid grid-cols-1 px-5 sm:px-10 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-16;
+	}
+
 	.scroll-animation {
 		opacity: 1;
 		filter: blur(5px);
@@ -95,5 +99,9 @@
 			transition: none;
 		}
 	}
+
+	.content {
+        clip-path: inset(0);
+    }
 
 }
