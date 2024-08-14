@@ -2,7 +2,6 @@
 
     import { ref, reactive, onMounted } from 'vue'
 
-    import GroupScrollAnimation from '../transitions/GroupScrollAnimation.vue'
 
     import Linkedin from '../../icons/Linkedin.vue'
     import Github from '../../icons/Github.vue'
@@ -49,20 +48,14 @@
         <div class="hero-overlay bg-stone-800 bg-opacity-60"></div>
         <div class="hero-content text-center">
             <div class="max-w-md">
-                <GroupScrollAnimation className="" direction="left">
-                    <h1 class="mb-5 text-5xl font-bold">Miguel García del Real Ortiz</h1>
-                    <p class="mb-5">Full-stack Software Engineer</p>
-                </GroupScrollAnimation>
+                <h1 class="mb-5 text-5xl font-bold">Miguel García del Real Ortiz</h1>
+                <p class="mb-5">Full-stack Software Engineer</p>               
                 
-                
-                <GroupScrollAnimation
-                    className="flex gap-5 items-center justify-around"
-                    direction="left"
-                >
+                <div class="flex gap-5 items-center justify-around">
                     <a :key="'cv'" class="btn btn-outline" href="MiguelGDRO_CV.pdf" data-index="1" download>CV</a>
                     <Github :key="'gh'" :link="'https://github.com/Mikegdro'" data-index="2" />
                     <Linkedin :key="'lk'" :link="'https://linkedin.com/in/mgdro'" data-index="3" />
-                </GroupScrollAnimation>
+                </div>
 
             </div>
         </div>

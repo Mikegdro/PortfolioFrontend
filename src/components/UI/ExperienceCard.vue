@@ -14,7 +14,7 @@
 </script>
 
 <template>
-    <article class="flex justify-between flex-wrap gap-5 p-7 rounded-xl hover shadow-lg personal-card">
+    <article class="flex justify-between flex-wrap gap-5 p-7 rounded-xl hover shadow-lg personal-card ScrollAnimation">
         <div class="flex flex-col">
             <h1>{{ experience.role }}</h1>
             <p>{{ startDate[0] }} {{ startDate[1] }} - {{ endDate[0] }} {{ endDate[1] }}</p>

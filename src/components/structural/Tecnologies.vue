@@ -37,16 +37,16 @@
 </script>
 
 <template>
-    <section>
-        <h1 class="text-3xl">Tecnologies</h1>
-        <div v-if="tecnologies">
-            <div role="tablist" class="tabs tabs-boxed mt-5">
+    <section class="lg:px-52 md:px-24 sm:px-14 px-5 bg-base-300 py-16">
+        <h1 class="text-5xl text-center">Tecnologies</h1>
+        <div v-if="tecnologies" class="pt-10 flex flex-col gap-5">
+            <div role="tablist" class="tabs tabs-boxed mt-5 bg-base-100">
                 <a id="frontend" role="tab" class="tab" :class="{ 'tab-active': activeTab === 'frontend' }" @click="changeTab">Front-end</a>
                 <a id="backend" role="tab" class="tab" :class="{ 'tab-active': activeTab === 'backend' }" @click="changeTab">Back-end</a>
                 <a id="devops" role="tab" class="tab" :class="{ 'tab-active': activeTab === 'devops' }" @click="changeTab">Devops</a>
             </div>
 
-            <div class="content">
+            <div v-if="tecnologies" class="content bg-base-100 rounded-lg py-10">
                 <Columns direction="right" >
                     <template v-for="(tecnology, index) in tecnologies" :key="tecnology.id" >
                         <TecnologyCard v-if="tecnology.type === activeTab" v-bind="tecnology" :data-index="index" />

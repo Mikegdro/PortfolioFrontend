@@ -9,8 +9,6 @@
 
     import ExperienceCard from '../UI/ExperienceCard.vue'
 
-    import GroupScrollAnimation from '../transitions/GroupScrollAnimation.vue';
-
     const experiences = ref<Experience[]>([])
     const err = ref(false)
     const loading = ref(true)
@@ -29,14 +27,12 @@
 </script>
 
 <template>
-    <section>
-        <h2 class="text-3xl box">Experience</h2>
+    <section class="lg:px-52 md:px-24 sm:px-14 px-5 bg-base-100 py-16">
+        <h2 class="text-3xl box text-center">Experience</h2>
         
-        <div class="pt-5 flex flex-col">
+        <div class="content pt-10 flex flex-col">
             <div v-if="experiences.length > 0">
-                <GroupScrollAnimation className="" direction="left">
-                    <ExperienceCard v-for="experience in experiences" v-bind="experience"/>
-                </GroupScrollAnimation>
+                <ExperienceCard v-for="experience in experiences" v-bind="experience"/>
             </div>
         </div>
         

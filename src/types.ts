@@ -1,7 +1,7 @@
 export type Project = {
     id: string
     name: string
-    type: 'personal' | 'privado'
+    type: 'personal' | 'private'
     PersonalProject?: PersonalProject
     PrivateProject?: PrivateProject
 }
@@ -19,9 +19,11 @@ export type PrivateProject = {
     id: string
     idProject: string
     title: string
-    repository: string | null
-    image: string | null
-    imageReduced: string | null
+    companyId: string
+    startDate: string
+    endDate: string
+    experienceId: string
+    Company: Company
 }
 
 export type Company = {
