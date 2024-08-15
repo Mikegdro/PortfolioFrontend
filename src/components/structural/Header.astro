@@ -8,7 +8,7 @@ export const prerender = true
 <header
     x-data="{ scroll: false }"
     @scroll.window="scroll = (window.pageYOffset > window.innerHeight-100) ? true : false"
-    :class="{ 'bg-neutral': scroll, 'bg-transparent': !scroll }"
+    :class="{ 'bg-base-100': scroll, 'bg-transparent': !scroll }"
     class="navbar w-11/12 mt-5 px-5 m-auto left-0 right-0 fixed top-0 z-10 transition-all duration-500 rounded-lg glass scroll-animation fade-animation"
     transition:persist="nav"
     transition:animate="fade"

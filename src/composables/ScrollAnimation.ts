@@ -5,9 +5,7 @@ import { gsap } from "gsap";
 
 export function useScrollAnimation (element: HTMLElement) {
 
-    const observer = useIntersectionObserver(element, ([{isIntersecting}]) => {
-
-        console.log(element)
+    useIntersectionObserver(element, ([{isIntersecting}]) => {
 
         if (isIntersecting) {
             onEnter(element)
@@ -31,7 +29,7 @@ export function useScrollAnimation (element: HTMLElement) {
     function onLeave(el: HTMLElement) {
         gsap.to(el, {
             opacity: 0,
-            y: 150
+            y: 50
         })
     }
 

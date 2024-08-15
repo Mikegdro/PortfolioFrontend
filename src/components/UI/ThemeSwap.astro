@@ -27,35 +27,40 @@
 
 <script is:inline>
 
-    document.addEventListener('astro:page-load', () => {
+    document.addEventListener('DOMContentLoaded', () => {
+
 		const theme = (() => {
 
-        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-            return localStorage.getItem('theme')
-        }
+            if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+                return localStorage.getItem('theme')
+            }
 
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            return 'dark'
-        }
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                return 'dark'
+            }
 
-        return 'light'
+            return 'light'
 
         })();
+
+        document.documentElement.dataset.currentTheme = theme
 
         const button = document.querySelector('.theme-controller')
 
         if (theme === 'light') {
-        button.click()
+            button.click()
         }
 
         button.addEventListener('click', () => {
-        const theme = localStorage.getItem('theme')
+            const theme = localStorage.getItem('theme')
 
-        if (theme === 'dark') {
-            localStorage.setItem('theme', 'light')
-        } else {
-            localStorage.setItem('theme', 'dark')
-        }
+            if (theme === 'dark') {
+                localStorage.setItem('theme', 'light')
+            } else {
+                localStorage.setItem('theme', 'dark')
+            }
+
+            document.documentElement.dataset.currentTheme = theme === 'dark' ? 'light' : 'dark'
         })
         
 	})

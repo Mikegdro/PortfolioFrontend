@@ -1,0 +1,105 @@
+---
+
+
+---
+
+<section class="bg-dot h-dvh flex justify-center items-center">
+
+    <main class="z-0 flex flex-col justify-center items-center gap-24">
+        
+        <h1 class="text-6xl text-center poppins scroll-animation left-animation">Web Development <br/> made <span class="emph text-primary">easy</span></h1>
+
+    </main>
+
+</section>
+
+<style>
+
+    section {
+        clip-path: inset(0);
+    }
+
+    html[data-current-theme='dark'] {
+        --dot-bg-color: #0d1117;
+        --dot-color: #2f353c;
+        --dot-mask-color: #000000;
+    }
+
+    html[data-current-theme='light'] {
+        --dot-bg-color: #ffffff;
+        --dot-color: #5f5f5fc7;
+        --dot-mask-color: #ffffff;
+    }
+
+    .bg-dot::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+            linear-gradient(90deg, var(--dot-bg-color) 22px, transparent 1%) 50%,
+            linear-gradient(var(--dot-bg-color) 22px, transparent 1%) 50%,
+            var(--dot-color);
+        background-position: center center;
+        background-size: 24px 24px;
+        mask-image: linear-gradient(0deg, transparent 5%, var(--dot-mask-color));
+    }
+
+    .emph {
+        --spread: 140deg;
+        --start: 290deg;
+        --accent: hsl(280 80% 50%);
+
+        /* color: var(--accent); */
+
+        position: relative;
+        filter: drop-shadow(rgba(46, 46, 46, 0.438) 5px 5px);
+    }
+
+    .emph::before {
+        content: '';
+        position: absolute;
+        top: 95%;
+        width: 150%;
+        aspect-ratio: 3 / 1;
+        left: 50%;
+        transform: translate(-50%, 0);
+        border-radius: 50%;
+        border: 6px solid var(--accent);
+        /* Use a conic gradient mask to hide and show the bits you want */
+        
+        mask: conic-gradient(from var(--start), white 0 var(--spread), transparent var(--spread));
+        
+    }
+
+</style>
+
+<script>
+
+    import { gsap } from 'gsap'
+
+    const element = document.querySelector('.emph')
+    
+    if (element != undefined) {
+        element.addEventListener('mouseover', () => {
+            executeAnimation(element)
+        })
+    }
+
+    function executeAnimation(element: Element) {
+
+        const tl = gsap.timeline()
+
+        tl.to(element, {
+            '--start': 0,
+            '--spread': 0
+        })
+
+        tl.to(element, {
+            '--start': 290,
+            '--spread': 140
+        })
+
+        tl.play()
+    }
+
+</script>
