@@ -1,53 +1,84 @@
 ---
+
 import ThemeSwap from "../UI/ThemeSwap.astro";
 import Logo from "../UI/Logo.astro";
 
-export const prerender = true
 ---
 
 <header
     x-data="{ scroll: false }"
     @scroll.window="scroll = (window.pageYOffset > window.innerHeight-100) ? true : false"
-    :class="{ 'bg-base-100': scroll, 'bg-transparent': !scroll }"
-    class="navbar w-11/12 mt-5 px-5 m-auto left-0 right-0 fixed top-0 z-10 transition-all duration-500 rounded-lg glass scroll-animation fade-animation"
+    :class="{ 'nav': scroll }"
+    class="navbar w-11/12 mt-5 px-5 m-auto left-0 right-0 fixed top-0 z-10 transition-all duration-500 rounded-lg bg-neutral scroll-animation fade-animation"
     transition:persist="nav"
     transition:animate="fade"
 >
-    <div class="navbar-start bg-transparent text-white">
-        <ThemeSwap />
-    </div>
 
-    <div class="navbar-center bg-transparent text-white">
+    <div class="navbar-start bg-transparent text-white">
         <Logo />
     </div>
 
+    <ul
+        tabindex="0"
+        class="navbar-center flex gap-8 manrope text-lg sm:text-xl text-white"
+    >
+        <li>
+            <a class="nav-link" href="/" data-astro-reload>
+                Home
+            </a>
+        </li>
+        <li>
+            <a class="nav-link" href="/blog" data-astro-reload>
+                Blog
+            </a>
+        </li>
+    </ul>
+
     <div class="navbar-end bg-transparent text-white">
-        <div class="dropdown dropdown-bottom dropdown-end">
-            <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M4 6h16M4 12h16M4 18h7"></path>
-                </svg>
-            </div>
-            <ul
-                tabindex="0"
-                class="menu bg-neutral menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow"
-            >
-                <li><a href="/" data-astro-reload>Home</a></li>
-                <li><a href="/blog" data-astro-reload>Blog</a></li>
-            </ul>
-        </div>
+        <ThemeSwap />
     </div>
 </header>
+
+<style>
+
+    .nav {
+        opacity: 0;
+    }
+
+    .nav-link {
+        position: relative;
+
+        z-index: 0;
+
+        filter: drop-shadow(rgb(85, 85, 85) 2px 2px);
+    }
+
+    .nav-link::before {
+        content: '';
+        position: absolute;
+        
+        width: 0%;
+        height: 5px;
+
+        z-index: -1;
+
+        bottom: 0;
+
+        background-color: rgb(0, 141, 184);
+
+        opacity: 0;
+
+        transform: translateX(15px);
+
+        transition: width .3s linear;
+    }
+
+    .nav-link:hover:before {
+        opacity: 1 !important;
+        width: 100%;
+    }
+    
+</style>
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
 is:inline></script>
