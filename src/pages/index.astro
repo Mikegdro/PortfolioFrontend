@@ -26,9 +26,9 @@ import Footer from "../components/structural/Footer.astro";
     <About />
 
     <main class="flex flex-col my-16 gap-5">
-        <Experience client:visible />
-        <Tecnologies client:visible />
-        <Projects client:visible />
+        <Experience client:load />
+        <Tecnologies client:load />
+        <Projects client:load />
     </main>
     <Footer />
 </Layout>
