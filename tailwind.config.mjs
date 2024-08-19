@@ -9,7 +9,7 @@ export default {
 	],
 	daisyui: {
 		themes: [
-			"nord",
+			"retro",
 			"dark"
 		],
 		darkTheme: ['class', '[data-theme="dark"]'],

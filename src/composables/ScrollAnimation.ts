@@ -16,7 +16,7 @@ export function useScrollAnimation (element: HTMLElement) {
     const { pause } = useIntersectionObserver(element, ([{isIntersecting}]) => {
 
         if (isIntersecting) {
-            // pause()
+            pause()
             onEnter(element)
         } 
 
@@ -35,15 +35,13 @@ export function useScrollAnimation (element: HTMLElement) {
 
         tl.to(element, {
             x: -50,
-            opacity: 0,
-            duration: 0,
-            delay: delay * .01
+            duration: 0
         })
 
         tl.to(element, {
             x: 0,
             opacity: 1,
-            duration: 0.3,
+            duration: 0.1,
             delay: delay * .15
         })
     }
