@@ -3,33 +3,48 @@ import { useIntersectionObserver } from "@vueuse/core";
 
 import { gsap } from "gsap";
 
+/**
+ *  Composable to reuse the scroll animation, it needs an HTMLElement as an input, and it'll observe that element and execute the Animation.
+ * 
+ *  @param element 
+ */
 export function useScrollAnimation (element: HTMLElement) {
 
-    useIntersectionObserver(element, ([{isIntersecting}]) => {
+    /**
+     *  Hook from VueUse to abstract the intersection observer.
+     */
+    const { pause } = useIntersectionObserver(element, ([{isIntersecting}]) => {
 
         if (isIntersecting) {
+            // pause()
             onEnter(element)
-        } else {
-            onLeave(element)
-        }
+        } 
+
     })
 
+    /**
+     *  OnEnter Slide Animation with GSAP
+     * 
+     *  @param el 
+     */
     function onEnter(el: HTMLElement) {
 
         const delay: number = el.dataset.index ? Number(el.dataset.index) : 0
 
-        gsap.to(el, {
-            opacity: 1,
-            duration: .3,
-            y: 0,
-            delay: .15 * delay
-        })
-    }
+        const tl = gsap.timeline()
 
-    function onLeave(el: HTMLElement) {
-        gsap.to(el, {
+        tl.to(element, {
+            x: -50,
             opacity: 0,
-            y: 50
+            duration: 0,
+            delay: delay * .01
+        })
+
+        tl.to(element, {
+            x: 0,
+            opacity: 1,
+            duration: 0.3,
+            delay: delay * .15
         })
     }
 
