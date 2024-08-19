@@ -15,6 +15,8 @@ export function useScrollAnimation (element: HTMLElement) {
      */
     const { pause } = useIntersectionObserver(element, ([{isIntersecting}]) => {
 
+        console.log(element, isIntersecting)
+
         if (isIntersecting) {
             pause()
             onEnter(element)
@@ -34,14 +36,14 @@ export function useScrollAnimation (element: HTMLElement) {
         const tl = gsap.timeline()
 
         tl.to(element, {
-            x: -50,
+            y: -50,
             duration: 0
         })
 
         tl.to(element, {
-            x: 0,
+            y: 0,
             opacity: 1,
-            duration: 0.1,
+            duration: 0.5,
             delay: delay * .15
         })
     }
