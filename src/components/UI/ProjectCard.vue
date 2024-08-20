@@ -31,7 +31,7 @@
 </script>
 
 <template>
-    <article ref="article" class="card w-full hover personal-card">
+    <article ref="article" class="card w-full hover personal-card opacity-0">
         <div class="card-body">
             <a v-if="logo && linkedin" :href="linkedin" class="btn btn-primary fixed logo">
                 <img :src="logo" alt="Company Logo" width="50"/>

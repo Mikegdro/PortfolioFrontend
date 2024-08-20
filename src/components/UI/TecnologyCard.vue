@@ -25,7 +25,7 @@
 
 <template>
     
-    <article ref="article" class="card shadow-xl hover personal-card ScrollAnimation">
+    <article ref="article" class="card shadow-xl hover personal-card opacity-0">
         <div class="card-body">
             <a class="btn btn-ghost dark:btn-outline outline-primary outline-dashed border-0 hover:bg-primary min-h-20" :href="data.site!" target="_blank">
                 <img :src="data.logo!" class="object-contain h-full" loading="lazy"/>

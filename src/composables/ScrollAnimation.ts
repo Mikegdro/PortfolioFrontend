@@ -35,15 +35,14 @@ export function useScrollAnimation (element: HTMLElement) {
 
         const tl = gsap.timeline()
 
+        // tl.to(element, {
+        //     opacity: 0,
+        //     duration: 0
+        // })
+        
         tl.to(element, {
-            y: -50,
-            duration: 0
-        })
-
-        tl.to(element, {
-            y: 0,
             opacity: 1,
-            duration: 0.5,
+            duration: 0.2,
             delay: delay * .15
         })
     }
