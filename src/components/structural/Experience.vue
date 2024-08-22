@@ -27,8 +27,8 @@
 </script>
 
 <template>
-    <section class="lg:px-52 md:px-24 sm:px-14 px-5 bg-base-200 py-16">
-        <h2 class="text-3xl box text-center">Experience</h2>
+    <section class="lg:px-52 md:px-24 sm:px-14 px-5 bg-base-100 py-16">
+        <h2 class="text-5xl text-center dark:text-neutral-content">Experience</h2>
         
         <div v-if="experiences" class="content pt-10 flex flex-col">
             <template v-for="(experience, index) in experiences" :key="experience.id">

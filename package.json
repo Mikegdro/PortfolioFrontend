@@ -15,6 +15,8 @@
     "@vueuse/components": "^10.11.0",
     "@vueuse/core": "^10.11.0",
     "gsap": "^3.12.5",
+    "swiper": "^11.1.10",
+    "theme-change": "^2.5.0",
     "vue": "^3.4.36"
   },
   "devDependencies": {

@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <a href={link} target="_blank" class="btn btn-primary w-1/2 ml-auto mt-5">
+    <a href={link} target="_blank" class="btn btn-primary w-full sm:w-1/2 ml-auto mt-5">
         <svg
             xmlns="http://www.w3.org/2000/svg"
             shape-rendering="geometricPrecision"

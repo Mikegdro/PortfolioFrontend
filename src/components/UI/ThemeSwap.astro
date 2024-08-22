@@ -1,6 +1,6 @@
 <label class="swap swap-rotate scale-75">
     <!-- this hidden checkbox controls the state -->
-    <input type="checkbox" class="theme-controller" value="retro" />
+    <input data-toggle-theme="dark,retro" type="checkbox" class="theme-controller" value="retro" />
 
     <!-- sun icon -->
     <svg
@@ -39,15 +39,13 @@
                 return 'dark'
             }
 
-            return 'light'
+            return 'retro'
 
         })();
 
-        document.documentElement.dataset.currentTheme = theme
-
         const button = document.querySelector('.theme-controller')
 
-        if (theme === 'light') {
+        if (theme === 'retro') {
             button.click()
         }
 
@@ -55,12 +53,11 @@
             const theme = localStorage.getItem('theme')
 
             if (theme === 'dark') {
-                localStorage.setItem('theme', 'light')
+                localStorage.setItem('theme', 'retro')
             } else {
                 localStorage.setItem('theme', 'dark')
             }
 
-            document.documentElement.dataset.currentTheme = theme === 'dark' ? 'light' : 'dark'
         })
         
 	})

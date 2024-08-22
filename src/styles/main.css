@@ -39,7 +39,7 @@
 	}
 
 	.personal-card {
-		@apply bg-neutral-content;
+		@apply bg-neutral-content border border-spacing-3 border-accent dark:border-transparent;
 	}
 
 	.personal-card h1 {
@@ -55,7 +55,7 @@
 	}
 
 	.columns {
-		@apply grid grid-cols-1 px-5 sm:px-10 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-16;
+		@apply grid px-5 sm:px-10 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-16;
 	}
 
 	.scroll-animation {

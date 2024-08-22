@@ -2,7 +2,7 @@
 
     import { useFetch } from '@vueuse/core';
 
-    import { ref, onMounted } from 'vue';
+    import { ref } from 'vue';
 
     import { type Project } from '../../types';
 
@@ -24,9 +24,9 @@
 </script>
 
 <template>
-    <section class="lg:px-28 md:px-16 sm:px-10 px-5 bg-base-200 py-16">
-        <h2 class="text-3xl text-center">Projects</h2>
-        <div v-if="projects" class="pt-10 content columns">
+    <section class="lg:px-28 md:px-16 sm:px-10 px-5 bg-base-100 py-16">
+        <h1 class="text-5xl text-center dark:text-neutral-content">Projects</h1>
+        <div v-if="projects" class="pt-20 content columns">
             <template v-for="(project, index) in projects" :key="project.id" >
                 <ProjectCard v-bind="project" :data-index="index" />
             </template>

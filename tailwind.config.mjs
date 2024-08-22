@@ -12,6 +12,6 @@ export default {
 			"retro",
 			"dark"
 		],
-		darkTheme: ['class', '[data-theme="dark"]'],
-	}
+	},
+	darkMode: ['class', '[data-theme="dark"]']
 }

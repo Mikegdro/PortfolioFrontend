@@ -95,16 +95,16 @@
 </script>
 
 <template>
-    <section class="lg:px-52 md:px-24 sm:px-14 px-5 bg-base-100 py-16">
-        <h1 class="text-5xl text-center">Tecnologies</h1>
+    <section class="lg:px-52 md:px-24 sm:px-14 px-5 bg-neutral py-16 ">
+        <h1 class="text-5xl text-center text-base-100 dark:text-neutral-content">Tecnologies</h1>
         <div v-if="tecnologies" class="pt-10 flex flex-col gap-5">
-            <div role="tablist" class="tabs tabs-boxed mt-5 bg-base-200">
+            <div role="tablist" class="tabs tabs-boxed mt-5 bg-base-100">
                 <a id="frontend" role="tab" class="tab" :class="{ 'tab-active': activeTab === 'frontend' }" @click="changeTab">Front-end</a>
                 <a id="backend" role="tab" class="tab" :class="{ 'tab-active': activeTab === 'backend' }" @click="changeTab">Back-end</a>
                 <a id="devops" role="tab" class="tab" :class="{ 'tab-active': activeTab === 'devops' }" @click="changeTab">Devops</a>
             </div>
 
-            <div v-if="tecnologies" class="content relative bg-base-200 rounded-lg columns py-10">
+            <div v-if="tecnologies" class="content relative bg-base-100 rounded-lg columns py-10 min-h-80">
 
                 <div class="animation absolute left-0 w-full h-full z-0 flex flex-col">
                     <div class="col bg-primary flex-1 opacity-0"></div>

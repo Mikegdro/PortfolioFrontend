@@ -1,34 +1,92 @@
-<section class="pt-6 pb-10 gap-6 bg-base-100">
-    <div class="h-full w-full flex items-center justify-around gap-16 flex-col lg:flex-row p-6">
-        <p class="scroll-animation right-animation child-animation">
-            <span>+2 years</span>
-            of professional experience
+---
+    
+    import Github from "../../icons/Github.astro"
+    import Linkedin from "../../icons/Linkedin.astro"
+    
+---
+
+<section class="bg-neutral py-10 px-5 flex flex-col gap-16">
+    
+    <!-- Main info and Picture -->
+    <div class="flex flex-col w-full md:flex-row justify-between items-center gap-10">
+
+        <!-- Avatar -->
+        <div class="flex-1 avatar flex justify-center scroll-animation right-animation child-animation">
+            <div class="ring-accent ring-offset-neutral dark:ring-offset-neutral ring ring-offset-4 w-60 rounded-full shadow-2xl transition-transform hover:scale-[0.95] transform-gpu">
+                <img src="/assets/profile.webp" alt="Miguel's picture" loading="lazy" />
+            </div>
+        </div>
+
+        <!-- Information -->
+        <div class="flex-1 text-base-100 dark:text-neutral-content poppins flex flex-col justify-center scroll-animation right-animation child-animation">
+            <p class="text-2xl text-center">I am</p> 
+            <p class="underline text-accent text-3xl text-center">Miguel García</p>
+            <br>
+            <!-- Subtitle -->
+            <h2 class="flex-1 text-base-100 dark:text-neutral-content scroll-animation right-animation child-animation text-center">
+                Full-stack & Cloud Developer
+            </h2>
+        </div>
+
+    </div>
+
+    <!-- Socials -->
+    <div class="w-full flex justify-evenly">
+        <Linkedin link="https://linkedin.com/in/mgdro" />
+        <Github link="https://github.com/Mikegdro" />
+    </div>
+
+    <!-- About me -->
+    <div class="text-base-100 dark:text-neutral-content flex flex-col items-center">
+        <h1 class="text-center text-3xl poppins text-accent">About me</h1>
+        <p class="text-justify w-full sm:w-4/5 lg:w-3/5 mt-5">
+            I'm 25 y/o with a degree in higher education in Web Development, i've been working for more than a year as a full-stack Developer
+            and Cloud Developer & i also work in my own personal projects while learning new tecnologies to expand my knowledge and become a better developer.
         </p>
-        <p class="scroll-animation right-animation child-animation">
-            <span>Constant learner</span>
-            always looking for cool side-projects
+        <p class="text-justify w-full sm:w-4/5 lg:w-3/5 mt-5">
+            This is my personal website & you can find any information regarding my personal growth here, along with some blog posts about tecnologies and new 
+            methodologies i discover and use.
         </p>
-        <p class="scroll-animation right-animation child-animation">
-            <span>B2 in English</span>
-            Self-taught
+        <p class="text-justify w-full sm:w-4/5 lg:w-3/5 mt-5">
+            I'm currently working remotely for Cívica, a company located in Granada, Spain, it is a technical consulting company that offers a huge array of services
+            from web development to Artificial Inteligence or Data Science to medium-big sized companies, all this while implementing the best tecnologies and methodologies.
+        </p>
+        <p class="text-justify w-full sm:w-4/5 lg:w-3/5 mt-5">
+            I'm looking for new opportunities in the Open Source world, contributing to public projects that enrich and push forward the capabilities of the web & tecnology in
+            general is my pasion & i'd love to contribute my grain of sand in the future, so if you are looking for some help, contact me!
+        </p>
+        <a href="mailto:miguelgdro@gmail.com" class="btn btn-accent mt-5">Contact &rarr;</a>
+    </div>
+
+    
+    <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-16 text-base-100 dark:text-neutral-content text-center py-10 text-xl">
+        <p class="location w-full scroll-animation right-animation child-animation">
+            <span class="emph">Located in</span>
+            &#x1f1ea;&#x1f1f8;
+        </p>
+        <p class="experience w-full scroll-animation right-animation child-animation">
+            <span class="emph">1+ years</span> 
+            of professional experience 
+        </p>
+        <p class="languages w-full scroll-animation right-animation child-animation">
+            <span class="emph">B2 english</span> level
         </p>
     </div>
+
 </section>
 
-<style>
+<style scoped>
+
+    .emph {
+        font-family: 'Poppins';
+        font-size: 36px;
+    }
 
     p {
         display: flex;
         flex-direction: column;
-        align-items: center;
 
-        text-wrap: nowrap;
-    }
-
-    span {
-        font-size: 36px;
-        font-family: 'Poppins';
-        font-weight: 800;
+        line-height: 35px;
     }
 
 </style>

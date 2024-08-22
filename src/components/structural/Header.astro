@@ -25,12 +25,12 @@ const { pathname } = Astro.url
         class="navbar-center flex gap-8 manrope text-lg sm:text-xl text-white"
     >
         <li>
-            <a class="nav-link before:bg-primary" href="/" class:list={[{ 'activeRoute': pathname === '/' }]} data-astro-reload>
+            <a class="nav-link before:bg-accent" href="/" class:list={[{ 'activeRoute': pathname === '/' }]} data-astro-reload>
                 Home
             </a>
         </li>
         <li>
-            <a class="nav-link before:bg-primary" class:list={[{ 'activeRoute': pathname === '/blog' }]} href="/blog" data-astro-reload>
+            <a class="nav-link before:bg-accent" class:list={[{ 'activeRoute': pathname === '/blog' }]} href="/blog" data-astro-reload>
                 Blog
             </a>
         </li>
